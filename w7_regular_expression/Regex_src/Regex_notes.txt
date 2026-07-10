@@ -1,0 +1,72 @@
+Ref: https://docs.python.org/3/library/re.html#
+
+.   any char except a new line
+
+(Quantiers)
+*   0 or more repetition
+
++   1 or more repetition
+
+?   0 or 1 repetition
+(Quantiers)
+
+{m} m repetition
+
+{m,n} m-n repetition (Lower_bound,upper_bound)
+
+^   matches the start of the string
+
+$   matches the end of the string or 
+    just before the newline at the end of the string
+
+[]  set of characters
+
+[^m]    complementing the set (excluding m chars)
+e.g [^arn] 
+Returns a match for any character EXCEPT a, r, and n
+
+[0-5][0-9] will match all the two-digits numbers from 00 to 59
+
+\w  Returns a match where the string 
+    contains any word characters 
+    (characters from 
+    a to Z, 
+    digits from 0-9, 
+    and the underscore _ character)
+i.e \w = [a-zA-Z0-9_]
+
+\b is defined as the boundary between a \w and a \W character 
+(or vice versa), 
+or between \w and the beginning or end of the string.
+
+\W  not a word character
+
+\d  decimal digits, = [0-9]
+\D  not a decimal digits
+
+\s  whitespace characters
+\S  not a whitespace characters
+
+|   same as (or) 
+e.g A|B either A or B
+
+(...) grouping and capturing 
+
+(?:...)
+By adding ?: right after the opening parenthesis, 
+you tell the regex engine: 
+"Group these letters together,
+ but don't save them in memory!"
+
+# capturing the matcehd group using 
+<var>.group[index] 
+! Index starts from 1 !
+
+match.groups() 
+returns a tuple containing all the substrings 
+matched by the capturing groups of a regular expression.
+
+        re.search()                     vs                          re.findall()
+Returns only the first match.                   Returns all matches in the text.
+A Match object (or None if no match).           A Python list (empty list if no match).
+Stops execution as soon as it finds a match.    Scans the entire string every time.

@@ -1,0 +1,21 @@
+@property = Decorator used to define a method as a property
+It can be accessed like a attribute
+
+@property (Getter): 
+Defines the method that reads the attribute.
+It is executed automatically when you call object.attribute.
+
+@<attribute_name>.setter: 
+Defines the method that updates the attribute. 
+It runs automatically when you assign a value using object.attribute = value.
+
+@<attribute_name>.deleter: 
+Defines the method that handles deletion. 
+It triggers when you execute del object.attribute.
+--------------------------------------------------------
+@classmethod = Decorator used to add functionality to a class itself,
+                not to instances of that class.
+
+Always receive the class as the first parameter(cls)
+----------------------------------------------------------
+super() refer to super class (aka: parent class) of the subclass (aka: child class)
